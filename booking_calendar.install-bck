@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+
+use Drupal\webform\Entity\Webform;
+
+function booking_calendar_install() {
+  if (!Webform::load('booking_calendar_form')) {  // 'booking_calendar_form' should match the form ID
+    $webform = Webform::create([
+      'id' => 'booking_calendar_form',
+      'title' => 'Booking Form',
+      'elements' => file_get_contents(drupal_get_path('module', 'booking_calendar') . '/config/install/webform.webform.booking_calendar.yml'),
+    ]);
+    $webform->save();
+  }
+}

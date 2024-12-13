@@ -1,0 +1,9 @@
+name: 'Booking Calendar'
+type: module
+description: 'Provides dynamic booking system.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+    - webform:webform
+    - drupal:webform_views
+    - drupal:token

@@ -1,0 +1,7 @@
+booking_calendar.menu_settings:
+  title: 'Booking Calendar Settings'
+  description: 'Configure the Booking Calendar.'
+  route_name: booking_calendar.settings
+  parent: system.admin_config_system
+  weight: 100
+  menu_name: admin

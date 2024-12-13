@@ -1,0 +1,4 @@
+services:
+  booking_calendar.calendar_service:
+    class: 'Drupal\booking_calendar\Service\BookingCalendarService'
+    arguments: ['@config.factory']  # Injecting the config.factory service

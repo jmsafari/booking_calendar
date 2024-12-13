@@ -1,0 +1,66 @@
+booking_calendar.settings:
+  type: config_object
+  label: 'Booking Calendar Settings'
+  mapping:
+    title_display:
+      type: boolean
+      label: 'Display title'
+    title_value:
+      type: string
+      label: 'Title'
+    cal_lang:
+      type: string
+      label: 'Calendar language'
+    cal_first_day:
+      type: integer
+      label: 'First day of the week'
+    cal_closed_days:
+      type: sequence
+      label: 'Closed day(s)'
+      sequence:
+        type: integer
+    cal_opened_days:
+      type: sequence
+      label: 'Opened day(s)'
+      sequence:
+        type: string
+    cal_half_days:
+      type: sequence
+      label: 'Half day(s)'
+      sequence:
+        type: integer
+    cal_opening_window:
+      type: integer
+      label: 'Opening window'
+    current_day_bookable:
+      type: boolean
+      label: 'Current day - bookable'
+    vacation_days:
+      type: string
+      label: 'Enter the dates (YYYY-MM-DD)'
+    recurring_dayoff:
+      type: string
+      label: '(Recurring) annual days off / Public holidays'
+    recurring_monthly_dayoff:
+      type: string
+      label: '(Recurring) monthly days off'
+      
+    # Additional static settings here as needed
+
+    # Define the base structure for half-day (hd) fields
+    num_fields_hd:
+      type: integer
+      label: 'Number of Half Day Fields'
+      
+    # Define the base structure for full-day (fd) fields
+    num_fields_fd:
+      type: integer
+      label: 'Number of Full Day Fields'
+
+    half_day_slots:
+      type: string
+      label: 'Half Day Slots'
+      
+    full_day_slots:
+      type: string
+      label: 'Full Day Slots'

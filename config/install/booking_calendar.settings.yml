@@ -1,0 +1,37 @@
+title_display: true
+title_value: 'Booking Calendar'
+cal_lang: en
+cal_first_day: 0
+cal_closed_days:
+  1: 0
+  2: 0
+  3: 0
+  4: 0
+  5: 0
+  6: 0
+  7: 0
+cal_opened_days:
+  1: f
+  2: f
+  3: f
+  4: f
+  5: f
+  6: f
+  7: f
+cal_half_days:
+  1: 0
+  2: 0
+  3: 0
+  4: 0
+  5: 0
+  6: 0
+  7: 0
+cal_opening_window: -1
+current_day_bookable: true
+vacation_days: ''
+recurring_dayoff: ''
+recurring_monthly_dayoff: ''
+num_fields_hd: 0
+num_fields_fd: 0
+half_day_slots: '[]'
+full_day_slots: '[]'

@@ -1,0 +1,4 @@
+access booking_calendar configuration:
+  title: 'Access Booking Calendar configuration'
+  description: 'Allows users to access the configuration page for Booking Calendar.'
+  restrict access: true

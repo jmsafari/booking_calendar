@@ -1,0 +1,40 @@
+booking_calendar.calendar:
+  path: '/booking-calendar/{param}'
+  defaults:
+    _controller: Drupal\booking_calendar\Controller\BookingCalendarController::displayCalendar
+    param: '0'
+  requirements:
+    _permission: 'access content'
+    
+booking_calendar.dashboard:
+  path: '/booking-dashboard/{param}'
+  defaults:
+    _controller: Drupal\booking_calendar\Controller\BookingCalendarController::displayBookingDashboard
+    param: '0'
+  requirements:
+    _permission: 'access content'
+
+booking_calendar.messages:
+  path: '/notif-message/{param}'
+  defaults:
+    _controller: Drupal\booking_calendar\Controller\BookingCalendarController::displayMessage
+    param: '0'
+  requirements:
+    _permission: 'access content'
+    
+booking_calendar.book_now:
+  path: '/calendar/book/{param}'
+  defaults:
+    _controller: Drupal\booking_calendar\Controller\BookingSlotsController::displayAvailableSlots
+    param: 'NA'
+  requirements:
+    _permission: 'access content'
+    
+booking_calendar.settings:
+  path: '/admin/config/system/booking-calendar-settings'
+  defaults:
+    _form: '\Drupal\booking_calendar\Form\BookingCalendarConfigForm'
+    _title: 'Booking Calendar Settings'
+  requirements:
+    _permission: 'access booking_calendar configuration'
+ 

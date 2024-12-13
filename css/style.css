@@ -1,0 +1,100 @@
+@charset "ISO-8859-1";
+
+.booking_calendar th{
+	width: 14% !important;
+}
+
+.booking_calendar td.closed_day {
+	
+	background: #FFB6C1 !important;
+	padding-top: 1.5rem !important;
+	
+}
+
+.booking_calendar td.empty {
+	
+	background: #DDDDDD !important;
+	padding-top: 1.5rem !important;
+	
+}
+
+.booking_calendar td.available_day {
+	
+	background: #B6FFCF !important;
+	padding-top: 1.5rem !important;
+	
+}
+
+.cal_header th, .cal_header a {
+	
+	color: #757575 !important;
+}
+
+.cal_header th{
+	
+	background: #FFFFFF !important;
+}
+
+/* DAshboard legend */
+
+
+        .legend-container {
+         /*   display: inline-block; */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+            /* width: fit-content; */
+        }
+
+        .legend-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            /*margin-bottom: 5px;*/
+            margin-right: 15px;
+        }
+
+        .legend-icon, .legend-icon-x, .legend-icon-xx {
+            width: 60px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+
+		.legend-icon {
+            width: 35px;
+		}
+		
+		.legend-icon-x{
+            width: 60px;
+		}
+		.legend-icon-xx {
+            width: 105px;
+		}
+        .legend-label {
+            font-size: 1em;
+        }
+
+        /* Example icons for map symbols */
+        .closed-bg {
+            background-color: #FFB6C1;
+        }
+
+        .opened-bg {
+            background-color: #B6FFCF;
+        }
+        
+        .prev-next-month {
+            background-color: #DDDDDD;
+        }
+
+        .all_slots_taken {
+            background-color: #dc3545;
+        }

@@ -1,0 +1,83 @@
+<?php
+
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * Implements hook_webform_submission_presave().
+ */
+ 
+function booking_calendar_webform_submission_presave(WebformSubmissionInterface $submission) {
+        
+       
+        $field_time = substr($submission->getElementData('booking_datetime'), 11, 5);
+        $field_date = substr($submission->getElementData('booking_datetime'), 0, 10);
+        
+        $booking_calendar_service = \Drupal::service('booking_calendar.calendar_service');
+        
+        
+        if(!($booking_calendar_service->isTheDateOpened($field_date, $field_time)) ){
+            
+            $booking_calendar_service->inCaseOfErrorResponse();
+        }
+
+        
+        // Slot availability check
+        
+        $typeOfDay = $booking_calendar_service->isDayFullHalfClosed($field_date);
+        
+        
+        if($typeOfDay==='c'){
+            
+            // The status of the day has been changed to CLOSED
+            $booking_calendar_service->inCaseOfErrorResponse();
+            
+        }else if($typeOfDay==='f' && in_array($field_time , array_keys($booking_calendar_service->full_day_slots)) ){
+            
+            // Variable $queryMaxRows to optimize the query - LIMIT the number of rows needed to make a decision
+            $queryMaxRows = $booking_calendar_service->full_day_slots[$field_time];
+            $total_count = $booking_calendar_service->countPlacesAlreadyTakenPerSlot($field_date, $field_time, $queryMaxRows);
+            
+            if($total_count === $queryMaxRows) {
+               
+                    // No more place available
+                    $booking_calendar_service->inCaseOfErrorResponse();
+            }
+        }else if($typeOfDay ==='h' && in_array($field_time , array_keys($booking_calendar_service->half_day_slots))){
+            
+            // Variable $queryMaxRows to optimize the query - LIMIT the number of rows needed to make a decision
+            $queryMaxRows = $booking_calendar_service->half_day_slots[$field_time];
+            $total_count = $booking_calendar_service->countPlacesAlreadyTakenPerSlot($field_date, $field_time, $queryMaxRows);
+            
+            if($total_count === $queryMaxRows) {
+                
+                // No more place available
+                $booking_calendar_service->inCaseOfErrorResponse();
+            }   
+        }else{
+            
+            // If  the time selected belong to none of the slots
+            $booking_calendar_service->inCaseOfErrorResponse();
+        }
+}
+
+
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function booking_calendar_views_pre_render($view) {
+
+  // Target the specific Webform view, for example, "webform_submissions".
+  if ($view->id() == 'booked_appointments' && $view->current_display == 'page_1') {
+
+    // Attach the custom JavaScript library to this view.
+    // This will execute before the page is rendered.
+    \Drupal::service('page_cache_kill_switch')->trigger();
+    $view->element['#attached']['library'][] = 'booking_calendar/booking_calendar.custom_actions_label';
+  }
+}
+
+
+
+
+

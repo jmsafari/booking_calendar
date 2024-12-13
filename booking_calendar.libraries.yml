@@ -1,0 +1,66 @@
+booking_calendar.styles:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+booking_calendar.bootstrap_css:
+  version: 4.0
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+      
+booking_calendar.fontawesome_css:
+  version: 5.15
+  css:
+    theme:
+      css/all.min.css: {}
+      
+booking_calendar.bootstrap_js:
+  version: 4.0
+  css:
+    theme:
+      js/bootstrap.min.js: {}
+  dependencies:
+      - core/jquery         # Ensures jQuery is loaded.
+      
+booking_calendar.fontawesome_js:
+  version: 5.15
+  css:
+    theme:
+      js/fontawesome.min.js: {}
+  dependencies:
+      - core/jquery         # Ensures jQuery is loaded.
+
+booking_calendar.jquery_timepicker:
+  version: 1.x
+  css:
+    theme:
+      css/jquery.timepicker.min.css: {}
+  js:
+    js/jquery.timepicker.min.js: {}
+    js/booking_calendar.timepicker.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+booking_calendar.textarea_with_chars_counter:
+  version: 1.x
+  js:
+    js/booking_calendar.textarea_with_chars_counter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+booking_calendar.textarea_with_chars_counter2:
+  version: 1.x
+  js:
+    js/booking_calendar.textarea_with_chars_counter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    
+booking_calendar.custom_actions_label:
+  version: 1.0
+  js:
+    js/booking_calendar.custom_actions_label.js: {}
+  dependencies:
+    - core/jquery
+    
