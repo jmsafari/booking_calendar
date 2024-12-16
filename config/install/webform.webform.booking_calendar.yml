@@ -138,7 +138,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url_message
-  confirmation_url: /admin/config/system/booking-calendar-settings
+  confirmation_url: /
   confirmation_title: ''
   confirmation_message: 'Your Appointment is confirmed'
   confirmation_attributes: {  }
