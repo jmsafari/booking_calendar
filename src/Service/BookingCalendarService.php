@@ -148,8 +148,9 @@ class BookingCalendarService extends ControllerBase{
                 // Define your date range for filtering, for example, submissions from the past 30 days.
                 
                 $connection = Database::getConnection();
-                
-                $query_limit = isset($query_max_rows) && is_numeric($query_max_rows)   ? " LIMIT :queryMaxRows " : " ";
+
+                // $query_limit = isset($query_max_rows) && is_numeric($query_max_rows)   ? " LIMIT :queryMaxRows " : " ";
+                $query_limit = isset($query_max_rows) && is_numeric($query_max_rows)   ? " LIMIT ".$query_max_rows : " ";
                 
                 $query = "
                             SELECT COUNT(DISTINCT ws_joined.sid ) as total
