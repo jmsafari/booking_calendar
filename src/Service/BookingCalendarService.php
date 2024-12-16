@@ -141,7 +141,7 @@ class BookingCalendarService extends ControllerBase{
         }
         
         
-        public function countPlacesAlreadyTakenPerSlot($field_date = NULL, $field_time= NULL, $query_max_rows=0){
+        public function countPlacesAlreadyTakenPerSlot($field_date = NULL, $field_time= NULL, $query_max_rows=NULL){
             
             if(isset($field_date) && isset($field_time )){
                 
