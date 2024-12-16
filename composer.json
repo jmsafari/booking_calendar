@@ -18,8 +18,6 @@
   "extra": {
     "drupal-scaffold": {
       "custom-modules-dir": "modules/custom"
+    }
   }
 }
-
-
-
