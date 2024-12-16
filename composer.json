@@ -12,6 +12,10 @@
   "require": {
     "drupal/core-composer-scaffold": "^10",
     "jmsafari/booking_calendar": "*"
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "custom-modules-dir": "modules/custom"
   }
 }
 
