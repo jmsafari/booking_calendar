@@ -1,0 +1,10 @@
+{
+  "name": "jmsafari/booking_calendar",
+  "description": "A booking calendar module for Drupal",
+  "type": "drupal-module",
+  "autoload": {
+    "psr-4": {
+      "Drupal\\booking_calendar\\": "src/"
+    }
+  }
+}
