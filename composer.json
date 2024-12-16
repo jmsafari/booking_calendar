@@ -1,12 +1,19 @@
 {
   "name": "jmsafari/booking_calendar",
-  "description": "A booking calendar module for Drupal",
-  "type": "drupal-module",
+  "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "autoload": {
-    "psr-4": {
-      "Drupal\\booking_calendar\\": "src/"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/jmsafari/booking_calendar.git"
     }
+  ],
+  "require": {
+    "drupal/core-composer-scaffold": "^10",
+    "jmsafari/booking_calendar": "*"
   }
 }
+
+
+
