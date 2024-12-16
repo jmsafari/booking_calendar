@@ -3,7 +3,7 @@
   "description": "A booking calendar module for Drupal",
   "type": "drupal-module",
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Drupal\\booking_calendar\\": "src/"
