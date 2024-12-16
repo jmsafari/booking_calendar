@@ -11,7 +11,9 @@
   ],
   "require": {
     "drupal/core-composer-scaffold": "^10",
-    "jmsafari/booking_calendar": "*"
+    "jmsafari/booking_calendar": "*",
+    "drupal/webform": "^6.2",
+    "drupal/token": "^1.15"
   },
   "extra": {
     "drupal-scaffold": {
