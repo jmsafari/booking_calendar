@@ -837,8 +837,19 @@ class BookingCalendarConfigForm extends ConfigFormBase {
     
     private function clear_booking_calendar_data_cache() {
 
-        // If you want to manually delete cache items for your module:
-        $cid = 'booking_calendar'; // Module cache ID
-        \Drupal::service('cache.data')->delete($cid);
+       // If you want to manually delete cache items for your module:
+       /*   $cid = 'booking_calendar'; // Module cache ID
+          \Drupal::service('cache.data')->delete($cid);
+          \Drupal::service('cache.config')->delete($cid);
+          Cache::invalidateTags(["config:$cid"]);
+       */
+        Cache::invalidateTags(['config:'.$this->config_name]);
+        Cache::invalidateTags([$this->config_name.':data']);
+
+        // Invalidate the render cache for this specific path.
+        // Cache::invalidateTags(['rendered:booking-calendar','rendered:booking-dashboard']);
+        // Rebuild the router to clear the route cache.
+        \Drupal::service('router.builder')->rebuild();
+        \Drupal::messenger()->addMessage('Configuration saved.');
     }
 }
