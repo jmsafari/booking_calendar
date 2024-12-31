@@ -50,8 +50,12 @@ Class BookingCalendarController extends ControllerBase{
 	    
 	      // Get the current month and year on the Calendar.
 	      // $current_date = new DrupalDateTime('+1 month');
-	      
-	      $current_date = new DrupalDateTime($param.' month');
+	      // Create a new date for the first day of the current month.
+	    
+	      $current_date = new DrupalDateTime('first day of this month');
+	      $current_date->modify($param.' month');
+	    
+	      // REMOVED: $current_date = new DrupalDateTime($param.' month');
 	      $year = $current_date->format('Y');
 	      $month = $current_date->format('m');
 	      
@@ -76,7 +80,12 @@ Class BookingCalendarController extends ControllerBase{
 	      $days_in_month = $first_day_of_month->format('t');
 	      
 	      // Get the previous month total number of days.
-	      $previous_date = new DrupalDateTime(($param-1).' month');
+	      // Create a new date for the first day of the previous month.
+	    
+	      $previous_date = new DrupalDateTime('first day of this month');
+	      $previous_date->modify(($param-1).' month');
+	    
+	      // REMOVED : $previous_date = new DrupalDateTime(($param-1).' month');
 	      $prev_year = $previous_date->format('Y');
 	      $prev_month = $previous_date->format('m');
 	      $days_in_prev_month = new DrupalDateTime("$prev_year-$prev_month-01");
